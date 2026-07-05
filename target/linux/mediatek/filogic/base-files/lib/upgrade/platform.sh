@@ -132,6 +132,7 @@ platform_do_upgrade() {
 	netis,nx30v2|\
 	netis,nx31|\
 	netis,nx32u|\
+	netis,n6-v2|\
 	nokia,ea0326gmp|\
 	openwrt,one|\
 	netcore,n60|\
@@ -336,6 +337,7 @@ platform_check_image() {
 	nokia,ea0326gmp|\
 	netis,eap930-v1|\
 	netis,nx32u|\
+	netis,n6-v2|\
 	openwrt,one|\
 	netcore,n60|\
 	qihoo,360t7|\

@@ -529,6 +529,18 @@ define U-Boot/mt7981_netis_nx32u
   DEPENDS:=+trusted-firmware-a-mt7981-spim-nand-ddr3
 endef
 
+define U-Boot/mt7981_netis_n6-v2
+  NAME:=netis N6 V2
+  BUILD_SUBTARGET:=filogic
+  BUILD_DEVICES:=netis_n6-v2
+  UBOOT_CONFIG:=mt7981_netis_n6-v2
+  UBOOT_IMAGE:=u-boot.fip
+  BL2_BOOTDEV:=spim-nand
+  BL2_SOC:=mt7981
+  BL2_DDRTYPE:=ddr3
+  DEPENDS:=+trusted-firmware-a-mt7981-spim-nand-ddr3
+endef
+
 define U-Boot/mt7981_nokia_ea0326gmp
   NAME:=Nokia EA0326GMP
   BUILD_SUBTARGET:=filogic
@@ -1249,6 +1261,7 @@ UBOOT_TARGETS := \
 	mt7981_jcg_q30-pro \
 	mt7981_konka_komi-a31 \
 	mt7981_netis_eap930-v1 \
+	mt7981_netis_n6-v2 \
 	mt7981_netis_nx30v2 \
 	mt7981_netis_nx31 \
 	mt7981_netis_nx32u \
