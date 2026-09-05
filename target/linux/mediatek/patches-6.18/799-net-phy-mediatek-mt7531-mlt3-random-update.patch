@@ -33,8 +33,8 @@ Link: https://github.com/mediatek/mtk-openwrt-feeds/blob/main/24.10/files/target
 Signed-off-by: Murad Rabadanov <the21.21@mail.ru>
 
 ---
- drivers/net/phy/mediatek/mtk-ge.c | 25 +++++++++++++++++++++++++
- 1 file changed, 25 insertions(+)
+ drivers/net/phy/mediatek/mtk-ge.c | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
 
 --- a/drivers/net/phy/mediatek/mtk-ge.c
 +++ b/drivers/net/phy/mediatek/mtk-ge.c
@@ -48,7 +48,7 @@ Signed-off-by: Murad Rabadanov <the21.21@mail.ru>
  /* Registers on MDIO_MMD_VEND1 */
  #define MTK_PHY_GBE_MODE_TX_DELAY_SEL		0x13
  #define MTK_PHY_TEST_MODE_TX_DELAY_SEL		0x14
-@@ -106,8 +109,30 @@ static int mt7530_led_config_of(struct p
+@@ -106,8 +109,31 @@ static int mt7530_led_config_of(struct p
  
  static int mt7531_phy_config_init(struct phy_device *phydev)
  {
@@ -73,9 +73,10 @@ Signed-off-by: Murad Rabadanov <the21.21@mail.ru>
 +		/* Enable the random update mechanism. */
 +		phy_select_page(phydev, MTK_PHY_PAGE_EXTENDED_52B5);
 +		__mtk_tr_set_bits(phydev, 0x1, 0xf, 0x18,
-+			  ENABLE_RANDOM_UPDOWN_COUNTER_TRIGGER);
++				  ENABLE_RANDOM_UPDOWN_COUNTER_TRIGGER);
 +		phy_restore_page(phydev, MTK_PHY_PAGE_STANDARD, 0);
 +	}
++
  	/* PHY link down power saving enable */
  	phy_set_bits(phydev, 0x17, BIT(4));
  	phy_modify_mmd(phydev, MDIO_MMD_VEND1, MTK_PHY_RXADC_CTRL_RG7,
